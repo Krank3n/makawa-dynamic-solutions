@@ -184,7 +184,14 @@ const Footer: React.FC = () => {
               &copy; {currentYear} {COMPANY_NAME}. All Rights Reserved.
             </p>
             <p className="text-xs md:text-sm mt-2 md:mt-0">
-              Website by Makawa Dynamic Solutions Internal Development
+              Website by <a
+                href="https://hansendev.com.au/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-vibrant hover:text-yellow-golden transition-colors duration-300"
+            >
+              HansenDev
+            </a>
             </p>
           </div>
         </div>
