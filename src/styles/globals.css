@@ -15,14 +15,7 @@ html {
   background: rgba(45, 52, 54, 0.3); /* Dark mode base */
   border: 1px solid rgba(149, 165, 166, 0.2); /* Warm gray border for dark */
 }
-.hero-video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(45, 52, 54, 0.7), rgba(93, 173, 226, 0.5));
-}
+
 .parallax-section {
   background-attachment: fixed;
   background-position: center;

@@ -137,7 +137,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     category: 'Residential Construction',
     description: 'Development of high-end apartment units with premium finishes and amenities.',
     beforeImageUrl: '/images/t-dawg-big-muscles-drill.jpg',
-    afterImageUrl: '/images/ceiling-fitting.jpg',
+    afterImageUrl: '/images/no-miles.jpg',
   },
 ];
 

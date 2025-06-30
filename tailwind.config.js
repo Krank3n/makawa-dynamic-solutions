@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'charcoal-deep': '#2D3436',
+        'charcoal-deep': '#1e2023',
+        'charcoal': '#2b2e33',
         'orange-vibrant': '#FF6B35',
         'blue-steel': '#5DADE2',
         'gray-warm': '#c9d8d8',

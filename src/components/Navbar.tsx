@@ -30,10 +30,15 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
                         <img
                             src="/images/makawa-icon-blue.svg"
                             alt={COMPANY_NAME}
-                            className="h-8 md:h-10 w-auto"
+                            className="h-8 md:h-10 w-auto hidden dark:block"
+                        />
+                        <img
+                            src="/images/makawa-logo.svg"
+                            alt={COMPANY_NAME}
+                            className="h-8 md:h-10 w-auto dark:hidden"
                         />
 
-                        <span className="hidden lg:block">
+                        <span className="hidden lg:block text-charcoal dark:text-white">
                         {COMPANY_NAME.split(' ')[0]} <span className="text-blue-steel">{COMPANY_NAME.split(' ').slice(1).join(' ')}</span>
                         </span>
                     </Link>
@@ -53,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
                             ))}
                         </nav>
                         <div className="flex items-center space-x-4">
-                            <a href={`tel:${COMPANY_PHONE}`} className="flex items-center text-sm text-charcoal-deep dark:text-gray-warm hover:text-orange-vibrant dark:hover:text-orange-vibrant transition-colors">
+                            <a href={`tel:${COMPANY_PHONE}`} className="flex items-center text-charcoal-deep dark:text-gray-warm hover:text-orange-vibrant dark:hover:text-orange-vibrant transition-colors">
                                 <PhoneIcon className="w-4 h-4 mr-1.5" /> {COMPANY_PHONE}
                             </a>
                             <button

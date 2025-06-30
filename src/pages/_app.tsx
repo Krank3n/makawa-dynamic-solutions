@@ -12,26 +12,42 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [darkMode, setDarkMode] = useState<boolean>(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
 
-  useEffect(() => {
-    // The inline script in `_document.tsx` has already set the correct class on <html>.
-    // This effect simply syncs the React state with the DOM state after hydration.
-    setDarkMode(document.documentElement.classList.contains('dark'));
-  }, []);
+    useEffect(() => {
+        // Check if there's a stored preference
+        const storedDarkMode = localStorage.getItem('darkMode');
 
-  const toggleDarkMode = useCallback(() => {
-    setDarkMode(prevMode => {
-      const newMode = !prevMode;
-      // Persist the user's choice
-      localStorage.setItem('darkMode', String(newMode));
-      // Update the DOM
-      if (newMode) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-      return newMode;
-    });
-  }, []);
+        if (storedDarkMode !== null) {
+            // User has a stored preference, use it
+            const isDark = storedDarkMode === 'true';
+            setDarkMode(isDark);
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        } else {
+            // First-time visitor, default to light mode
+            setDarkMode(false);
+            document.documentElement.classList.remove('dark');
+            // Optionally store the default preference
+            localStorage.setItem('darkMode', 'false');
+        }
+    }, []);
+
+    const toggleDarkMode = useCallback(() => {
+        setDarkMode(prevMode => {
+            const newMode = !prevMode;
+            // Persist the user's choice
+            localStorage.setItem('darkMode', String(newMode));
+            // Update the DOM
+            if (newMode) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            return newMode;
+        });
+    }, []);
 
   return (
     <div className={`bg-white dark:bg-charcoal-deep text-charcoal-deep dark:text-gray-warm min-h-screen font-sans transition-colors duration-500 overflow-x-hidden`}>
