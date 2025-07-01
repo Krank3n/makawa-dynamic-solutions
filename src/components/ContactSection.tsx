@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CONTACT_DETAILS, PhoneIcon, EmailIcon, LocationIcon } from '@/constants';
+import { WEB3FORMS_ACCESS_KEY, CONTACT_DETAILS, PhoneIcon, EmailIcon, LocationIcon } from '@/constants';
 import SectionTitle from '@/components/ui/SectionTitle';
 import Button from '@/components/ui/Button';
 import GlassCard from '@/components/ui/GlassCard';
@@ -24,9 +24,6 @@ const ContactSection: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  // Replace with your Web3Forms access key from https://web3forms.com
-  const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

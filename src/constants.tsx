@@ -64,7 +64,7 @@ export const CloseIcon: React.FC<{ className?: string }> = ({ className = "w-6 h
     <X className={className} />
 );
 
-
+export const WEB3FORMS_ACCESS_KEY = "101ef2f6-3840-47aa-afd7-d248ae99e416";
 export const COMPANY_NAME = "Makawa Dynamic Solutions";
 export const COMPANY_PHONE = "0487245159";
 export const COMPANY_EMAIL = "chargedtm11@gmail.com";

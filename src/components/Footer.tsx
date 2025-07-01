@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { COMPANY_NAME, COMPANY_PHONE, COMPANY_EMAIL, COMPANY_LOCATION, NAV_LINKS, PhoneIcon, EmailIcon, LocationIcon } from '@/constants';
+import { WEB3FORMS_ACCESS_KEY, COMPANY_NAME, COMPANY_PHONE, COMPANY_EMAIL, COMPANY_LOCATION, NAV_LINKS, PhoneIcon, EmailIcon, LocationIcon } from '@/constants';
 import Link from 'next/link';
 
 const Footer: React.FC = () => {
@@ -8,9 +8,6 @@ const Footer: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  // Replace with your Web3Forms access key from https://web3forms.com
-  const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
 
   const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

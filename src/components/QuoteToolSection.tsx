@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { WEB3FORMS_ACCESS_KEY } from '@/constants';
 import SectionTitle from '@/components/ui/SectionTitle';
 import Button from '@/components/ui/Button';
 import GlassCard from '@/components/ui/GlassCard';
@@ -22,9 +23,6 @@ const QuoteToolSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  // Replace with your Web3Forms access key from https://web3forms.com
-  const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
     const { name, value } = e.target;
